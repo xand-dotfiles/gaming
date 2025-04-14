@@ -27,14 +27,23 @@ in
                     inherit overlays system;
                 };
             };
+
+            vr = homeManagerConfiguration {
+                modules = [
+                    ./home.nix
+                    ./vr.nix
+                    xmonad.homeModules.xmonad
+                ];
+
+                pkgs = import inputs.nixpkgs {
+                    config.allowUnfree = true;
+                    inherit overlays system;
+                };
+            };
         });
 
         homeModules = {
             gaming = ./home.nix;
-        };
-
-        nixosModules = {
-            gaming = ./configuration.nix;
             vr = ./vr.nix;
         };
     };

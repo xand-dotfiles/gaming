@@ -29,7 +29,8 @@
         flake-parts.lib.mkFlake { inherit inputs; } {
             imports = [
                 inputs.hm-flake-parts.flakeModule
-                ./outputs.nix
+                ./home
+                ./nixos
             ];
 
             systems = [
