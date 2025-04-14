@@ -7,7 +7,7 @@ let
         ];
         isNormalUser = true;
         shell = pkgs.fish;
-    }
+    };
 in
 {
     imports = [
